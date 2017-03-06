@@ -6,7 +6,7 @@ install_oracle_libraries(){
   cd $build_dir/oracle
   local basic_download_url="https://github.com/karthikeyabhaghavatula/instantclient-basic-linux-12.1/archive/master.zip"
   curl -LOk "$basic_download_url" --silent --fail --retry 5 --retry-max-time 15 -o instantclient-basic.zip
-  echo "Downloaded [$sdk_download_url]"
+  echo "Downloaded [$basic_download_url]"
   echo "unzipping libraries"
   unzip master.zip
   cd instantclient-basic-linux-12.1-master
