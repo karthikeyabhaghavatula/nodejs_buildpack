@@ -4,13 +4,12 @@ install_oracle_libraries(){
   echo "Installing oracle libraries"
   mkdir -p $build_dir/oracle
   cd $build_dir/oracle
-  local basic_download_url="http://download.oracle.com/otn/linux/instantclient/121020/instantclient-basic-linux.x64-12.1.0.2.0.zip"
-  local sdk_download_url="http://download.oracle.com/otn/linux/instantclient/121020/instantclient-sdk-linux.x64-12.1.0.2.0.zip"
-  curl -k "$basic_download_url" --silent --fail --retry 5 --retry-max-time 15 -o instantclient-basic.zip
-  echo "Downloaded [$basic_download_url]"
-  curl -k "$sdk_download_url" --silent --fail --retry 5 --retry-max-time 15 -o instantclient-sdk.zip
+  local basic_download_url="https://github.com/karthikeyabhaghavatula/instantclient-basic-linux-12.1/archive/master.zip"
+  curl -LOk "$basic_download_url" --silent --fail --retry 5 --retry-max-time 15 -o instantclient-basic.zip
   echo "Downloaded [$sdk_download_url]"
   echo "unzipping libraries"
+  unzip master.zip
+  cd instantclient-basic-linux-12.1-master
   unzip instantclient-basic-linux.x64-12.1.0.2.0.zip
   unzip instantclient-sdk-linux.x64-12.1.0.2.0.zip
   mv instantclient_12_1 instantclient

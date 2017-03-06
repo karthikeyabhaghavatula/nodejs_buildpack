@@ -7,9 +7,9 @@ create_default_env() {
 
 add_oracle_env(){
     local build_dir="$1"
-        export LD_LIBRARY_PATH=$build_dir/oracle/instantclient:${LD_LIBRARY_PATH:-}
-    export OCI_LIB_DIR=$build_dir/oracle/instantclient
-    export OCI_INC_DIR=$build_dir/oracle/instantclient/sdk/include
+        export LD_LIBRARY_PATH=$build_dir/oracle/instantclient-basic-linux-12.1-master/instantclient:${LD_LIBRARY_PATH:-}
+    export OCI_LIB_DIR=$build_dir/oracle/instantclient-basic-linux-12.1-master/instantclient
+    export OCI_INC_DIR=$build_dir/oracle/instantclient-basic-linux-12.1-master/instantclient/sdk/include
   }
 
 list_node_config() {
